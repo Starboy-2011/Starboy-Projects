@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 15px;
+        }
+
+        .form-container {
+            background: white;
+            width: 100%;
+            max-width: 600px;
+            padding: 35px;
+            border-radius: 18px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #202b55;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #777;
+            margin-bottom: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group > label {
+            display: block;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .form-group input:not([type="radio"]):not([type="checkbox"]),
+        .form-group select,
+        .form-group textarea {
+            display: block;
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ccd2df;
+            border-radius: 8px;
+            font-size: 15px;
+            background: #fafbff;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .gender-options {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .gender-options label {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-weight: normal;
+        }
+
+        .language-options label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 9px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 480px) {
+            .form-container {
+                padding: 24px 18px;
+            }
+
+            h1 {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="form-container">
+    <h1>Student Registration Form</h1>
+    <p class="subtitle">Fill in your details to get started</p>
+
+    <form action="https://formsubmit.co/nzizashemagislain@gmail.com"
+          method="POST">
+
+        <input type="hidden" name="_subject"
+               value="New Student Registration">
+
+        <!-- Replace this with your actual published success page URL -->
+        <input type="hidden" name="_next"
+               value="https://starboy-2011.github.io/Starboy-Projects/success.html">
+
+        <div class="form-group">
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name"
+                   placeholder="Enter your first name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name"
+                   placeholder="Enter your last name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email"
+                   placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+        </div>
+
+        <div class="form-group">
+            <label>Gender:</label>
+            <div class="gender-options">
+                <label><input type="radio" name="gender"
+                              value="Male" required> Male</label>
+                <label><input type="radio" name="gender"
+                              value="Female"> Female</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="nationality">Nationality:</label>
+            <select id="nationality" name="nationality" required>
+                <option value="">Select your nationality</option>
+                <option>Kenya</option>
+                <option>Tanzania</option>
+                <option>Rwanda</option>
+                <option>South Sudan</option>
+                <option>Uganda</option>
+                <option>DR Congo</option>
+                <option>Burundi</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Spoken Languages:</label>
+            <p style="color:#777; margin-bottom:15px;">
+                You may choose more than one.
+            </p>
+
+            <div class="language-options">
+                <label><span>French</span>
+                    <input type="checkbox" name="language[]" value="French"></label>
+                <label><span>English</span>
+                    <input type="checkbox" name="language[]" value="English"></label>
+                <label><span>Kinyarwanda</span>
+                    <input type="checkbox" name="language[]" value="Kinyarwanda"></label>
+                <label><span>Swahili</span>
+                    <input type="checkbox" name="language[]" value="Swahili"></label>
+                <label><span>Dutch</span>
+                    <input type="checkbox" name="language[]" value="Dutch"></label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Contact Number:</label>
+            <input type="tel" id="phone" name="phone"
+                   placeholder="Enter your phone number" required>
+        </div>
+
+        <div class="form-group">
+            <label for="address">District Address:</label>
+            <input type="text" id="address" name="address"
+                   placeholder="Enter your district" required>
+        </div>
+
+        <div class="form-group">
+            <label for="hobbies">Your Hobbies:</label>
+            <textarea id="hobbies" name="hobbies"
+                      placeholder="Write your hobbies here"></textarea>
+        </div>
+
+        <button type="submit">Register Now</button>
+    </form>
+</div>
+</body>
+</html>
